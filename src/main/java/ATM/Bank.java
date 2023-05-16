@@ -16,4 +16,12 @@ public class Bank {
     public String getNewUserID() {
 
     }
+
+    public String getNewAccountUUID() {
+
+    }
+
+    public void addAccount(Account account) {
+        this.accounts.add(account);
+    }
 }

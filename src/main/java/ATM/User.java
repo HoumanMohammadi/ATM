@@ -39,4 +39,8 @@ public class User {
 
         System.out.printf("new user created for", lastName, firstName, this.uuid);
     }
+
+    public void addAccount(Account account) {
+        this.accounts.add(account);
+    }
 }

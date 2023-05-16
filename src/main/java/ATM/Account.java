@@ -7,9 +7,6 @@ public class Account {
     //name of the account, eg. saving account
     private String name;
 
-    //the current balance of the account
-    private double balance;
-
     //uuid of the account
     private String uuid;
 
@@ -20,11 +17,19 @@ public class Account {
     private ArrayList<Transaction> transactions;
 
 
-    public Account(String name, double balance, String uuid, ATM.User holder, ArrayList<ATM.Transaction> transactions) {
+    public Account(String name, User holder, Bank theBank) {
         this.name = name;
-        this.balance = balance;
-        this.uuid = uuid;
         this.holder = holder;
-        this.transactions = transactions;
+
+        //get new uuid for the account
+        this.uuid= theBank.getNewAccountUUID();
+
+        //initialize transactions
+        this.transactions= new ArrayList<Transaction>();
+
+        //add to holder and bank lists
+        holder.addAccount(this);
+        theBank.addAccount(this);
+
     }
 }
