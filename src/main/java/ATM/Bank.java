@@ -12,4 +12,8 @@ public class Bank {
 
     //keeping track of accounts
     private ArrayList<Account> accounts;
+
+    public String getNewUserID() {
+
+    }
 }
